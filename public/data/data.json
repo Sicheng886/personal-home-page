@@ -1,0 +1,21 @@
+{
+  "banner": [
+    {
+      "title": "portfolio",
+      "img": "",
+      "url": ""
+    }
+  ],
+  "projectList": [
+    {
+      "title": "snake",
+      "url": "/snake",
+      "desc": "A pure canvas snake game"
+    },
+    {
+      "title": "poplong",
+      "url": "/poplong",
+      "desc": "A bubbule shooter game built based on pixi.js"
+    }
+  ]
+}
