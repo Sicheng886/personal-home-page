@@ -1,5 +1,28 @@
 <template>
   <div class="wrapper">
+    <div class="deco">
+      <BannerCircle :type="true" :fromTop="0" :fromLeft="0" :toTop="1" :toLeft="1" size="35vw" />
+      <BannerCircle
+        :type="true"
+        :fromTop="30"
+        :fromLeft="102"
+        :toTop="32"
+        :toLeft="101"
+        size="20vw"
+      />
+      <BannerCircle :type="true" :fromTop="88" :fromLeft="93" :toTop="89" :toLeft="95" size="10vw" />
+      <BannerCircle
+        :type="false"
+        :fromTop="120"
+        :fromLeft="30"
+        :toTop="123"
+        :toLeft="30"
+        size="40vw"
+      />
+      <BannerCircle :type="false" :fromTop="5" :fromLeft="50" :toTop="6" :toLeft="50" size="25vw" />
+      <BannerCircle :type="false" :fromTop="50" :fromLeft="0" :toTop="52" :toLeft="0" size="10vw" />
+      <img src="../../assets/images/title.png" id="banner-title" alt />
+    </div>
     <div class="content">
       <h1 class="title">Wallygood.net</h1>
       <p class="slogan">Welcome to wally's personal site</p>
@@ -9,8 +32,11 @@
 </template>
 
 <script>
+import BannerCircle from "./Circle";
+
 export default {
-  name: "Banner"
+  name: "Banner",
+  components: { BannerCircle }
 };
 </script>
 
@@ -24,6 +50,26 @@ export default {
   background-position: 100% center;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
+  .deco {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+    #banner-title {
+      position: absolute;
+      transform: translate(-50%, -50%);
+    }
+
+    #banner-title {
+      width: 40vw;
+      left: 70%;
+      top: 50%;
+    }
+  }
 
   .content {
     display: flex;
@@ -32,6 +78,10 @@ export default {
     height: 100%;
     padding-left: 6rem;
     color: $light1;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
     .title {
       margin: 2rem 0;
       font-size: 4.5rem;

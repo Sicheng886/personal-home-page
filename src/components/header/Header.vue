@@ -26,6 +26,7 @@ export default {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  z-index: 10000;
   div {
     padding: 1rem 2rem;
   }
