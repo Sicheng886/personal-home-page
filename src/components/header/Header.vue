@@ -10,7 +10,9 @@
       <a href="#projects" @click.prevent="clickHandler($event, 'projectPos')"
         >Projects</a
       >
-      <a href="#">About</a>
+      <a href="#about" @click.prevent="clickHandler($event, 'aboutPos')"
+        >About</a
+      >
     </div>
   </div>
 </template>
@@ -27,7 +29,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(["hotspotPos", "projectPos"])
+    ...mapState(["hotspotPos", "projectPos", "aboutPos"])
   },
   methods: {
     scrollHandler() {

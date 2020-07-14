@@ -1,7 +1,14 @@
 <template>
   <div class="wrapper">
     <div class="deco">
-      <BannerCircle :type="true" :fromTop="0" :fromLeft="0" :toTop="6" :toLeft="4" size="35vw" />
+      <BannerCircle
+        :type="true"
+        :fromTop="0"
+        :fromLeft="0"
+        :toTop="6"
+        :toLeft="4"
+        size="35vw"
+      />
       <BannerCircle
         :type="true"
         :fromTop="30"
@@ -10,7 +17,14 @@
         :toLeft="102"
         size="20vw"
       />
-      <BannerCircle :type="true" :fromTop="77" :fromLeft="93" :toTop="92" :toLeft="97" size="10vw" />
+      <BannerCircle
+        :type="true"
+        :fromTop="77"
+        :fromLeft="93"
+        :toTop="92"
+        :toLeft="97"
+        size="10vw"
+      />
       <BannerCircle
         :type="false"
         :fromTop="120"
@@ -19,24 +33,51 @@
         :toLeft="30"
         size="40vw"
       />
-      <BannerCircle :type="false" :fromTop="5" :fromLeft="50" :toTop="10" :toLeft="50" size="25vw" />
-      <BannerCircle :type="false" :fromTop="40" :fromLeft="0" :toTop="60" :toLeft="2" size="10vw" />
+      <BannerCircle
+        :type="false"
+        :fromTop="5"
+        :fromLeft="50"
+        :toTop="10"
+        :toLeft="50"
+        size="25vw"
+      />
+      <BannerCircle
+        :type="false"
+        :fromTop="40"
+        :fromLeft="0"
+        :toTop="60"
+        :toLeft="2"
+        size="10vw"
+      />
       <img src="../../assets/images/title.png" id="banner-title" alt />
     </div>
     <div class="content">
       <h1 class="title">Wallygood.net</h1>
       <p class="slogan">Welcome to wally's personal site</p>
-      <div class="btn">View more</div>
+      <div class="btn" @click="clickHandler">View more</div>
     </div>
   </div>
 </template>
 
 <script>
 import BannerCircle from "./Circle";
+import { mapState } from "vuex";
 
 export default {
   name: "Banner",
-  components: { BannerCircle }
+  components: { BannerCircle },
+  computed: {
+    ...mapState(["hotspotPos"])
+  },
+  methods: {
+    clickHandler() {
+      window.scrollTo({
+        top: this.hotspotPos,
+        left: 0,
+        behavior: "smooth"
+      });
+    }
+  }
 };
 </script>
 

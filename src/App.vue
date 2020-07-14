@@ -4,6 +4,8 @@
     <Banner />
     <HotSpot :list="hotList" />
     <ProjectList :list="projectList" />
+    <About />
+    <Footer />
   </div>
 </template>
 
@@ -14,6 +16,8 @@ import Header from "./components/header/Header";
 import Banner from "./components/banner/Banner";
 import HotSpot from "./components/hotspot/HotSpot";
 import ProjectList from "./components/project/ProjectList";
+import About from "./components/about/About";
+import Footer from "./components/footer/Footer";
 
 export default {
   name: "App",
@@ -21,7 +25,9 @@ export default {
     Header,
     Banner,
     HotSpot,
-    ProjectList
+    ProjectList,
+    About,
+    Footer
   },
   data() {
     return {

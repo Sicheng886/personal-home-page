@@ -1,6 +1,11 @@
 <template>
   <div class="wrapper" ref="project">
     <Heading text="Projects" anchor="projects" />
+    <Intro
+      >Here contains the full list of my projects during the whole time. Even
+      though some of them have failed due to the various reasons. Might will be
+      updated or not. It depends...
+    </Intro>
     <section class="block-container">
       <a v-for="item of list" :href="item.url" :key="item.id">
         <div class="block-wrapper">
@@ -15,12 +20,14 @@
 
 <script>
 import Heading from "../common/Heading";
+import Intro from "../common/Intro";
 import { mapMutations } from "vuex";
 
 export default {
   name: "ProjectList",
   components: {
-    Heading
+    Heading,
+    Intro
   },
   props: {
     list: Array
@@ -41,6 +48,10 @@ export default {
 
 .wrapper {
   background-color: $light2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 5rem 0;
 
   .block-container {
@@ -72,7 +83,7 @@ export default {
       }
       p {
         text-align: justify;
-        color: #333;
+        color: #444;
       }
     }
   }

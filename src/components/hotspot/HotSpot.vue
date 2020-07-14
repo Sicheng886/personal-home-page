@@ -1,6 +1,12 @@
 <template>
   <div class="wrapper" ref="hotspot">
     <Heading text="Hot Spot" anchor="hotspot" />
+    <Intro
+      >These projects are the recent highlight projects designed and developed
+      by me. They are all front-end projects. Click on and have a look. Some of
+      them are the web games based on pixi.js, which is a very efficient and
+      friendly animation engine.
+    </Intro>
     <section class="hot-spot">
       <a v-for="item of list" :href="item.url" :key="item.id">
         <div class="block-wrapper">
@@ -21,12 +27,14 @@
 
 <script>
 import Heading from "../common/Heading";
+import Intro from "../common/Intro";
 import { mapMutations } from "vuex";
 
 export default {
   name: "HotSpot",
   components: {
-    Heading
+    Heading,
+    Intro
   },
   props: {
     list: Array
@@ -46,12 +54,15 @@ export default {
 @import "../../assets/styles/variables";
 .wrapper {
   background-color: $light1;
-
-  padding: 5rem 4rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   .hot-spot {
     display: flex;
     justify-content: space-between;
+    margin: 1rem 3rem;
     .block-wrapper {
       width: 25vw;
       height: 25vw;

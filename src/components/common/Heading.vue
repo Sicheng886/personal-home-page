@@ -21,5 +21,6 @@ export default {
   text-align: center;
   color: $dark2;
   padding-bottom: 2rem;
+  font-weight: bold;
 }
 </style>
