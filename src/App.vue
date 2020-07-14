@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 import Header from "./components/header/Header";
 import Banner from "./components/banner/Banner";
 import HotSpot from "./components/hotspot/HotSpot";
@@ -20,6 +22,21 @@ export default {
     Banner,
     HotSpot,
     ProjectList
+  },
+  data() {
+    return {
+      hotList: [],
+      projectList: []
+    };
+  },
+  methods: {
+    getData() {
+      axios.get("/api/data.json").then(this.dataHandler);
+    },
+    dataHandler(res) {
+      this.hotList = res.data;
+      console.log(res.data);
+    }
   }
 };
 </script>
