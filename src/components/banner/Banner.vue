@@ -1,26 +1,26 @@
 <template>
   <div class="wrapper">
     <div class="deco">
-      <BannerCircle :type="true" :fromTop="0" :fromLeft="0" :toTop="1" :toLeft="1" size="35vw" />
+      <BannerCircle :type="true" :fromTop="0" :fromLeft="0" :toTop="6" :toLeft="4" size="35vw" />
       <BannerCircle
         :type="true"
         :fromTop="30"
-        :fromLeft="102"
-        :toTop="32"
-        :toLeft="101"
+        :fromLeft="95"
+        :toTop="33"
+        :toLeft="102"
         size="20vw"
       />
-      <BannerCircle :type="true" :fromTop="88" :fromLeft="93" :toTop="89" :toLeft="95" size="10vw" />
+      <BannerCircle :type="true" :fromTop="77" :fromLeft="93" :toTop="92" :toLeft="97" size="10vw" />
       <BannerCircle
         :type="false"
         :fromTop="120"
         :fromLeft="30"
-        :toTop="123"
+        :toTop="127"
         :toLeft="30"
         size="40vw"
       />
-      <BannerCircle :type="false" :fromTop="5" :fromLeft="50" :toTop="6" :toLeft="50" size="25vw" />
-      <BannerCircle :type="false" :fromTop="50" :fromLeft="0" :toTop="52" :toLeft="0" size="10vw" />
+      <BannerCircle :type="false" :fromTop="5" :fromLeft="50" :toTop="10" :toLeft="50" size="25vw" />
+      <BannerCircle :type="false" :fromTop="40" :fromLeft="0" :toTop="60" :toLeft="2" size="10vw" />
       <img src="../../assets/images/title.png" id="banner-title" alt />
     </div>
     <div class="content">

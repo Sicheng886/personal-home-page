@@ -26,8 +26,12 @@ export default {
     return {
       topVal: (this.fromTop * window.innerHeight) / 100,
       leftVal: (this.fromLeft * window.innerWidth) / 100,
-
-      isFarward: this.type
+      vy:
+        ((this.fromTop - this.toTop) * window.innerHeight) /
+        (Math.random() * 20000 + 30000),
+      vx:
+        ((this.fromLeft - this.toLeft) * window.innerWidth) /
+        (Math.random() * 20000 + 30000)
     };
   },
   computed: {
@@ -38,11 +42,11 @@ export default {
     topLimit() {
       return (this.toTop * window.innerHeight) / 100;
     },
-    topUnit() {
-      return ((this.toTop - this.fromTop) * window.innerWidth) / 100000;
+    fromLeftLimit() {
+      return (this.fromLeft * window.innerWidth) / 100;
     },
-    leftUnit() {
-      return ((this.toLeft - this.fromLeft) * window.innerWidth) / 100000;
+    leftLimit() {
+      return (this.toLeft * window.innerWidth) / 100;
     },
 
     styleObj() {
@@ -55,23 +59,22 @@ export default {
   },
   methods: {
     moving() {
-      if (this.isFarward && this.topVal <= this.topLimit) {
-        this.topVal += this.topUnit;
-        this.leftVal += this.leftUnit;
-      } else if (this.isFarward && this.topVal > this.topLimit) {
-        this.isFarward = !this.isFarward;
+      if (this.topVal >= this.topLimit || this.topVal <= this.fromTopLimit) {
+        this.vy = -this.vy;
       }
-      if (!this.isFarward && this.topVal >= this.fromTopLimit) {
-        this.topVal -= this.topUnit;
-        this.leftVal -= this.leftUnit;
-      } else if (!this.isFarward && this.topVal < this.fromTopLimit) {
-        this.isFarward = !this.isFarward;
+      if (
+        this.leftVal >= this.leftLimit ||
+        this.leftVal <= this.fromLeftLimit
+      ) {
+        this.vx = -this.vx;
       }
+      this.topVal += this.vy;
+      this.leftVal += this.vx;
       window.requestAnimationFrame(this.moving);
     }
   },
   mounted() {
-    this.moving();
+    window.requestAnimationFrame(this.moving);
   }
 };
 </script>
