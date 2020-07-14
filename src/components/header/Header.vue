@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" :style="styleObj">
     <div>
       <img class="logo" src="../../assets/images/logo.png" alt="logo" />
     </div>
@@ -14,7 +14,38 @@
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  data() {
+    return {
+      styleObj: {
+        backgroundColor: "rgba(74,103,106,0)"
+      }
+    };
+  },
+  methods: {
+    scrollHandler() {
+      const top =
+        document.documentElement.scrollTop ||
+        document.body.scrollTop ||
+        window.pageYOffset;
+      if (top < 50) {
+        this.styleObj = {
+          backgroundColor: "rgba(49,81,94,0)"
+        };
+      } else if (top < 150) {
+        this.styleObj = {
+          backgroundColor: `rgba(49,81,94,${(top - 50) / 100})`
+        };
+      } else {
+        this.styleObj = {
+          backgroundColor: "rgba(49,81,94,1)"
+        };
+      }
+    }
+  },
+  mounted() {
+    window.addEventListener("scroll", this.scrollHandler);
+  }
 };
 </script>
 
@@ -27,9 +58,10 @@ export default {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   z-index: 10000;
   div {
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
   }
   .logo {
     width: 8rem;
@@ -39,6 +71,7 @@ export default {
     a {
       color: $light1;
       padding-left: 3.5rem;
+
       &:hover {
         text-decoration: underline;
       }

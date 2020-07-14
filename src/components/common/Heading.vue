@@ -18,7 +18,8 @@ export default {
 @import "../../assets/styles/variables";
 .title {
   font-size: 3rem;
+  text-align: center;
   color: $dark2;
-  padding-bottom: 1.5rem;
+  padding-bottom: 2rem;
 }
 </style>

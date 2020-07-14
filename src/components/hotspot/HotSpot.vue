@@ -73,7 +73,7 @@ export default {
 .wrapper {
   background-color: $light1;
 
-  padding: 2rem 1rem;
+  padding: 5rem 1rem;
 
   .hot-spot {
     display: flex;
