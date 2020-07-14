@@ -4,6 +4,7 @@
       <img class="logo" src="../../assets/images/logo.png" alt="logo" />
     </div>
     <div class="links">
+      <a href="#hotspot">Hot Spot</a>
       <a href="#projects">Projects</a>
       <a href="#">Gallery</a>
       <a href="#">About</a>
@@ -37,7 +38,7 @@ export default {
   .links {
     a {
       color: $light1;
-      padding-left: 4rem;
+      padding-left: 3.5rem;
       &:hover {
         text-decoration: underline;
       }

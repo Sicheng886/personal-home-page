@@ -1,12 +1,34 @@
 <template>
   <div class="wrapper">
-    <h1 class="title" id="projects">Projects</h1>
+    <Heading text="Projects" anchor="projects" />
+    <div>Something</div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+
+import Heading from "../common/Heading";
+
 export default {
-  name: "ProjectList"
+  name: "ProjectList",
+  components: {
+    Heading
+  },
+  data() {
+    return {
+      list: []
+    };
+  },
+  methods: {
+    getData() {
+      axios.get("/api/data.json").then(this.dataHandler);
+    },
+    dataHandler(res) {
+      this.list = res.data;
+      console.log(res.data);
+    }
+  }
 };
 </script>
 
@@ -14,13 +36,8 @@ export default {
 @import "../../assets/styles/variables";
 
 .wrapper {
-  background-color: $bgColor;
+  background-color: $light2;
 
   padding: 2rem 1rem;
-  .title {
-    font-size: 3rem;
-
-    color: $dark2;
-  }
 }
 </style>

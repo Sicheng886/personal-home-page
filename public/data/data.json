@@ -1,21 +1,48 @@
 {
-  "banner": [
+  "hotspot": [
     {
-      "title": "portfolio",
+      "title": "Portfolio",
       "img": "",
-      "url": ""
+      "url": "https://wallygood.net/portfolio/",
+      "desc": "My awesome portfolio of matser prjects"
+    },
+    {
+      "title": "Poplong",
+      "url": "/poplong/",
+      "img": "",
+      "desc": "A bubbule shooter game built based on pixi.js"
+    },
+    {
+      "title": "Where Is John",
+      "url": "/help-the-johns/",
+      "img": "",
+      "desc": "An energy saving game based on pixi.js"
     }
   ],
   "projectList": [
     {
       "title": "snake",
       "url": "/snake",
+      "img": "",
       "desc": "A pure canvas snake game"
     },
     {
+      "title": "portfolio",
+      "img": "",
+      "url": "https://wallygood.net/portfolio/",
+      "desc": "My awesome portfolio of matser prjects"
+    },
+    {
       "title": "poplong",
-      "url": "/poplong",
+      "url": "/poplong/",
+      "img": "",
       "desc": "A bubbule shooter game built based on pixi.js"
+    },
+    {
+      "title": "Where Is John",
+      "url": "/help-the-johns/",
+      "img": "",
+      "desc": "An energy saving game based on pixi.js"
     }
   ]
 }
