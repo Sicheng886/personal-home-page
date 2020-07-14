@@ -1,55 +1,17 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" ref="hotspot">
     <Heading text="Hot Spot" anchor="hotspot" />
     <section class="hot-spot">
-      <a href="https://wallygood.net/portfolio/">
+      <a v-for="item of list" :href="item.url" :key="item.id">
         <div class="block-wrapper">
           <div class="block-image-wrapper">
-            <img
-              class="block-image"
-              src="../../assets/images/_banner.jpg"
-              alt=""
-            />
+            <img class="block-image" :src="item.img" :alt="item.title" />
             <div class="block-image-desc">
-              <p>My awesome portfolio of matser prjects</p>
+              <p>{{ item.desc }}</p>
             </div>
           </div>
           <div class="block-title">
-            <p>Portfolio</p>
-          </div>
-        </div>
-      </a>
-      <a href="https://wallygood.net/portfolio/">
-        <div class="block-wrapper">
-          <div class="block-image-wrapper">
-            <img
-              class="block-image"
-              src="../../assets/images/_banner.jpg"
-              alt=""
-            />
-            <div class="block-image-desc">
-              <p>My awesome portfolio of matser prjects</p>
-            </div>
-          </div>
-          <div class="block-title">
-            <p>Portfolio</p>
-          </div>
-        </div>
-      </a>
-      <a href="https://wallygood.net/portfolio/">
-        <div class="block-wrapper">
-          <div class="block-image-wrapper">
-            <img
-              class="block-image"
-              src="../../assets/images/_banner.jpg"
-              alt=""
-            />
-            <div class="block-image-desc">
-              <p>My awesome portfolio of matser prjects</p>
-            </div>
-          </div>
-          <div class="block-title">
-            <p>Portfolio</p>
+            <p>{{ item.title }}</p>
           </div>
         </div>
       </a>
@@ -59,11 +21,23 @@
 
 <script>
 import Heading from "../common/Heading";
+import { mapMutations } from "vuex";
 
 export default {
   name: "HotSpot",
   components: {
     Heading
+  },
+  props: {
+    list: Array
+  },
+  methods: {
+    ...mapMutations(["getHotspotPos"])
+  },
+  mounted() {
+    const hotspot = this.$refs.hotspot;
+    const { top } = hotspot.getBoundingClientRect();
+    this.getHotspotPos(top);
   }
 };
 </script>
@@ -73,11 +47,11 @@ export default {
 .wrapper {
   background-color: $light1;
 
-  padding: 5rem 1rem;
+  padding: 5rem 4rem;
 
   .hot-spot {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     .block-wrapper {
       width: 25vw;
       height: 25vw;

@@ -2,8 +2,8 @@
   <div id="app">
     <Header />
     <Banner />
-    <HotSpot />
-    <ProjectList />
+    <HotSpot :list="hotList" />
+    <ProjectList :list="projectList" />
   </div>
 </template>
 
@@ -34,9 +34,16 @@ export default {
       axios.get("/api/data.json").then(this.dataHandler);
     },
     dataHandler(res) {
-      this.hotList = res.data;
-      console.log(res.data);
+      res = res.data;
+      if (res.ret) {
+        const data = res.data;
+        this.hotList = data.hotspot;
+        this.projectList = data.projectList;
+      }
     }
+  },
+  mounted() {
+    this.getData();
   }
 };
 </script>

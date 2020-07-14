@@ -4,15 +4,19 @@
       <img class="logo" src="../../assets/images/logo.png" alt="logo" />
     </div>
     <div class="links">
-      <a href="#hotspot">Hot Spot</a>
-      <a href="#projects">Projects</a>
-      <a href="#">Gallery</a>
+      <a href="#hotspot" @click.prevent="clickHandler($event, 'hotspotPos')"
+        >Hot Spot</a
+      >
+      <a href="#projects" @click.prevent="clickHandler($event, 'projectPos')"
+        >Projects</a
+      >
       <a href="#">About</a>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   name: "Header",
   data() {
@@ -21,6 +25,9 @@ export default {
         backgroundColor: "rgba(74,103,106,0)"
       }
     };
+  },
+  computed: {
+    ...mapState(["hotspotPos", "projectPos"])
   },
   methods: {
     scrollHandler() {
@@ -41,6 +48,13 @@ export default {
           backgroundColor: "rgba(49,81,94,1)"
         };
       }
+    },
+    clickHandler(e, item) {
+      window.scrollTo({
+        top: this[item],
+        left: 0,
+        behavior: "smooth"
+      });
     }
   },
   mounted() {
@@ -70,7 +84,7 @@ export default {
   .links {
     a {
       color: $light1;
-      padding-left: 3.5rem;
+      padding-left: 4rem;
 
       &:hover {
         text-decoration: underline;
