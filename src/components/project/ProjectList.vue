@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper" ref="project">
     <Heading text="Projects" anchor="projects" />
-    <Intro
-      >Here contains the full list of my projects during the whole time. Even
+    <Intro>
+      Here contains the full list of my projects during the whole time. Even
       though some of them have failed due to the various reasons. Might will be
       updated or not. It depends...
     </Intro>
@@ -71,9 +71,12 @@ export default {
         object-fit: cover;
         border-radius: 50%;
         filter: brightness(0.7);
-        transition: filter 0.3s ease;
+        box-shadow: 0.1rem 0.1rem 0.4rem 0.2rem rgba(0, 0, 0, 0.4);
+        transition: all 0.5s ease;
         &:hover {
           filter: brightness(1);
+          transform: scale(1.03);
+          box-shadow: 0.3rem 0.3rem 0.6rem 0.2rem rgba(0, 0, 0, 0.4);
         }
       }
       .block-title {

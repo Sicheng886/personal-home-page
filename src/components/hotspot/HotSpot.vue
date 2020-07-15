@@ -1,26 +1,24 @@
 <template>
   <div class="wrapper" ref="hotspot">
     <Heading text="Hot Spot" anchor="hotspot" />
-    <Intro
-      >These projects are the recent highlight projects designed and developed
+    <Intro>
+      These projects are the recent highlight projects designed and developed
       by me. They are all front-end projects. Click on and have a look. Some of
       them are the web games based on pixi.js, which is a very efficient and
       friendly animation engine.
     </Intro>
     <section class="hot-spot">
-      <a v-for="item of list" :href="item.url" :key="item.id">
-        <div class="block-wrapper">
-          <div class="block-image-wrapper">
-            <img class="block-image" :src="item.img" :alt="item.title" />
-            <div class="block-image-desc">
-              <p>{{ item.desc }}</p>
-            </div>
-          </div>
-          <div class="block-title">
-            <p>{{ item.title }}</p>
-          </div>
+      <div class="block-wrapper" v-for="item of list" :key="item.id">
+        <img class="block-image" :src="item.img" :alt="item.title" />
+
+        <div class="block-content">
+          <p class="block-title">{{ item.title }}</p>
+          <p class="block-desc">{{ item.desc }}</p>
+          <a :href="item.url">
+            <button class="btn">View Project</button>
+          </a>
         </div>
-      </a>
+      </div>
     </section>
   </div>
 </template>
@@ -58,58 +56,65 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 1rem 3rem;
 
   .hot-spot {
     display: flex;
-    justify-content: space-between;
-    margin: 1rem 3rem;
+    justify-content: space-around;
+    margin: 1rem 0;
+
     .block-wrapper {
-      width: 25vw;
-      height: 25vw;
-      .block-image-wrapper {
+      width: 20vw;
+      height: 50vh;
+      background: $dark2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 0.5rem;
+      box-shadow: 0.1rem 0.1rem 0.4rem 0.2rem rgba(0, 0, 0, 0.4);
+      transition: all 0.8s ease;
+      user-select: none;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0.3rem 0.3rem 0.6rem 0.2rem rgba(0, 0, 0, 0.4);
+      }
+      .block-image {
         width: 100%;
-        height: 20vw;
-        position: relative;
-
-        &:hover {
-          .block-image-desc {
-            opacity: 1;
-          }
-        }
-
-        .block-image {
-          width: 100%;
-          height: 20vw;
-          object-fit: cover;
-          border-radius: 0.5rem;
-        }
-        .block-image-desc {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.4);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          opacity: 0;
-          transition: all 0.3s ease;
-          border-radius: 0.5rem;
-          p {
-            color: white;
-            font-size: 1.4rem;
-            padding: 2rem;
-            text-align: center;
-          }
-        }
+        height: 12vw;
+        object-fit: cover;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
       }
 
-      .block-title {
-        text-align: center;
-        color: $dark2;
-        font-size: 1.3rem;
-        margin: 0.5rem 0 1rem;
+      .block-content {
+        padding: 0.5rem 1rem;
+        .block-title {
+          color: $light1;
+          font-size: 1.4rem;
+          margin: 2rem 0 1rem;
+          font-weight: bold;
+        }
+        .block-desc {
+          line-height: 1.2rem;
+          color: $light1;
+          margin: 0rem 0 1rem;
+        }
+        .btn {
+          color: $light1;
+          border: 0.2rem solid $light1;
+          padding: 0.8rem 1rem;
+          text-align: center;
+          margin: 1rem 0;
+          background: none;
+          transition: all 0.3s ease;
+          cursor: pointer;
+          &:hover {
+            background: $light1;
+            color: $dark2;
+          }
+        }
       }
     }
   }

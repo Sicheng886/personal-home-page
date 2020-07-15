@@ -4,7 +4,7 @@
     <div class="about-me-wrapper">
       <img
         class="about-me-img"
-        src="https://wallygood.net/imgs/me.jpg"
+        src="../../assets/images/me.jpg"
         alt="me"
       />
       <div class="about-me-content">

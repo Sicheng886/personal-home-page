@@ -1,18 +1,12 @@
 <template>
-  <div class="wrapper" :style="styleObj">
+  <div class="wrapper" :style="styleObj" ref="header">
     <div>
       <img class="logo" src="../../assets/images/logo.png" alt="logo" />
     </div>
     <div class="links">
-      <a href="#hotspot" @click.prevent="clickHandler($event, 'hotspotPos')"
-        >Hot Spot</a
-      >
-      <a href="#projects" @click.prevent="clickHandler($event, 'projectPos')"
-        >Projects</a
-      >
-      <a href="#about" @click.prevent="clickHandler($event, 'aboutPos')"
-        >About</a
-      >
+      <a href="#hotspot" @click.prevent="clickHandler($event, 'hotspotPos')">Hot Spot</a>
+      <a href="#projects" @click.prevent="clickHandler($event, 'projectPos')">Projects</a>
+      <a href="#about" @click.prevent="clickHandler($event, 'aboutPos')">About</a>
     </div>
   </div>
 </template>
@@ -29,6 +23,9 @@ export default {
     };
   },
   computed: {
+    headerHight() {
+      return this.$refs.header.clientHeight;
+    },
     ...mapState(["hotspotPos", "projectPos", "aboutPos"])
   },
   methods: {
@@ -53,7 +50,7 @@ export default {
     },
     clickHandler(e, item) {
       window.scrollTo({
-        top: this[item],
+        top: this[item] - this.headerHight,
         left: 0,
         behavior: "smooth"
       });
