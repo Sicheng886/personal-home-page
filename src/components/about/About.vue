@@ -2,11 +2,7 @@
   <div class="wrapper" ref="about">
     <Heading text="About" anchor="about" />
     <div class="about-me-wrapper">
-      <img
-        class="about-me-img"
-        src="../../assets/images/me.jpg"
-        alt="me"
-      />
+      <img class="about-me-img" src="../../assets/images/me.jpg" alt="me" />
       <div class="about-me-content">
         <h2>About me</h2>
         <p>
@@ -23,11 +19,7 @@
         <div class="links">
           <a href="mailto:wallyyoung886@gmail.com" class="iconfont">&#xec34;</a>
           <a href="https://github.com/Sicheng886" class="iconfont">&#xe600;</a>
-          <a
-            href="https://www.linkedin.com/in/sicheng-yang-663790197"
-            class="iconfont"
-            >&#xe73e;</a
-          >
+          <a href="https://www.linkedin.com/in/sicheng-yang-663790197" class="iconfont">&#xe73e;</a>
         </div>
       </div>
     </div>
@@ -96,6 +88,41 @@ export default {
           transition: color 0.3s ease;
           &:hover {
             color: $dark1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .wrapper {
+    .about-me-wrapper {
+      flex-direction: column;
+      .about-me-content {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .wrapper {
+    .about-me-wrapper {
+      .about-me-content {
+        h2 {
+          font-size: 1.2rem;
+        }
+        p {
+          font-size: 1rem;
+          line-height: 1.2rem;
+        }
+        .links {
+          justify-content: space-between;
+          width: 100%;
+          a {
+            font-size: 2rem;
+            margin-right: 0;
           }
         }
       }

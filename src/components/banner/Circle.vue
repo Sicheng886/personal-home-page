@@ -84,4 +84,10 @@ export default {
   position: absolute;
   transform: translate(-50%, -50%);
 }
+
+@media only screen and (max-width: 414px) {
+  .circle {
+    transform: scale(2);
+  }
+}
 </style>

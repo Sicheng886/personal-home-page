@@ -49,6 +49,7 @@ export default {
 .wrapper {
   background-color: $light2;
   min-height: 100vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -87,6 +88,34 @@ export default {
       p {
         text-align: justify;
         color: #444;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .wrapper {
+    .block-container {
+      .block-wrapper {
+        width: 40vw;
+        height: 25vh;
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .wrapper {
+    .block-container {
+      .block-wrapper {
+        .block-title {
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+        p {
+          font-size: 0.9rem;
+        }
       }
     }
   }

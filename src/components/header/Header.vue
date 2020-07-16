@@ -13,12 +13,13 @@
 
 <script>
 import { mapState } from "vuex";
+import isMobile from "../../functions/isMobile";
 export default {
   name: "Header",
   data() {
     return {
       styleObj: {
-        backgroundColor: "rgba(74,103,106,0)"
+        backgroundColor: isMobile() ? "rgba(49,81,94,1)" : "rgba(49,81,94,0)"
       }
     };
   },
@@ -57,7 +58,9 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener("scroll", this.scrollHandler);
+    if (!isMobile()) {
+      window.addEventListener("scroll", this.scrollHandler);
+    }
   }
 };
 </script>
@@ -87,6 +90,25 @@ export default {
 
       &:hover {
         text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .wrapper {
+    flex-direction: column;
+    position: absolute;
+    div {
+      padding: 0.3rem 0;
+    }
+    .links {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      padding-bottom: 1rem;
+      a {
+        padding-left: 0rem;
       }
     }
   }

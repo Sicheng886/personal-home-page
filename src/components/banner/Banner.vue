@@ -1,14 +1,7 @@
 <template>
   <div class="wrapper">
     <div class="deco">
-      <BannerCircle
-        :type="true"
-        :fromTop="0"
-        :fromLeft="0"
-        :toTop="6"
-        :toLeft="4"
-        size="35vw"
-      />
+      <BannerCircle :type="true" :fromTop="0" :fromLeft="0" :toTop="6" :toLeft="4" size="35vw" />
       <BannerCircle
         :type="true"
         :fromTop="30"
@@ -17,14 +10,7 @@
         :toLeft="102"
         size="20vw"
       />
-      <BannerCircle
-        :type="true"
-        :fromTop="77"
-        :fromLeft="93"
-        :toTop="92"
-        :toLeft="97"
-        size="10vw"
-      />
+      <BannerCircle :type="true" :fromTop="77" :fromLeft="93" :toTop="92" :toLeft="97" size="10vw" />
       <BannerCircle
         :type="false"
         :fromTop="120"
@@ -33,22 +19,8 @@
         :toLeft="30"
         size="40vw"
       />
-      <BannerCircle
-        :type="false"
-        :fromTop="5"
-        :fromLeft="50"
-        :toTop="10"
-        :toLeft="50"
-        size="25vw"
-      />
-      <BannerCircle
-        :type="false"
-        :fromTop="40"
-        :fromLeft="0"
-        :toTop="60"
-        :toLeft="2"
-        size="10vw"
-      />
+      <BannerCircle :type="false" :fromTop="5" :fromLeft="50" :toTop="10" :toLeft="50" size="25vw" />
+      <BannerCircle :type="false" :fromTop="40" :fromLeft="0" :toTop="60" :toLeft="2" size="10vw" />
       <img src="../../assets/images/title.png" id="banner-title" alt />
     </div>
     <div class="content">
@@ -103,9 +75,6 @@ export default {
     #banner-title {
       position: absolute;
       transform: translate(-50%, -50%);
-    }
-
-    #banner-title {
       width: 40vw;
       left: 70%;
       top: 50%;
@@ -145,6 +114,36 @@ export default {
       &:hover {
         background-color: $light1;
         color: $dark2;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .wrapper {
+    overflow: hidden;
+    .deco {
+      width: 100%;
+      overflow: hidden;
+      #banner-title {
+        top: 40%;
+        left: 50%;
+        width: 80vw;
+      }
+    }
+    .content {
+      padding-left: 0;
+      width: 80%;
+      top: 30%;
+      left: 10%;
+      .title {
+        width: 100%;
+        margin: 0;
+        font-size: 3rem;
+        margin-bottom: 2rem;
+      }
+      .slogan {
+        font-size: 1.4rem;
       }
     }
   }

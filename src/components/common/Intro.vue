@@ -19,4 +19,17 @@ export default {
   margin: 0 auto;
   line-height: 1.8rem;
 }
+
+@media only screen and (max-width: 414px) {
+  .intro {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .intro {
+    font-size: 1rem;
+    padding: 0.5rem 0 1rem;
+  }
+}
 </style>
