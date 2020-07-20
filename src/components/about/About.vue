@@ -99,8 +99,15 @@ export default {
   .wrapper {
     .about-me-wrapper {
       flex-direction: column;
+      .about-me-img {
+        width: 40vw;
+        height: 40vw;
+      }
       .about-me-content {
         margin-left: 0;
+        p {
+          line-height: 1.4rem;
+        }
       }
     }
   }

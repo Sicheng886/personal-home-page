@@ -136,6 +136,8 @@ export default {
       width: 80%;
       top: 30%;
       left: 10%;
+      align-items: center;
+      text-align: center;
       .title {
         width: 100%;
         margin: 0;

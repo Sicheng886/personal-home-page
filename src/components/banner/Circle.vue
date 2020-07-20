@@ -71,9 +71,20 @@ export default {
       this.topVal += this.vy;
       this.leftVal += this.vx;
       window.requestAnimationFrame(this.moving);
+    },
+    resizeHandler() {
+      this.topVal = (this.fromTop * window.innerHeight) / 100;
+      this.leftVal = (this.fromLeft * window.innerWidth) / 100;
+      this.vy =
+        ((this.fromTop - this.toTop) * window.innerHeight) /
+        (Math.random() * 20000 + 30000);
+      this.vx =
+        ((this.fromLeft - this.toLeft) * window.innerWidth) /
+        (Math.random() * 20000 + 30000);
     }
   },
   mounted() {
+    window.addEventListener("resize", this.resizeHandler);
     window.requestAnimationFrame(this.moving);
   }
 };

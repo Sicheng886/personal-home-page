@@ -7,21 +7,24 @@
         "title": "Portfolio",
         "img": "https://wallygood.net/imgs/portfolio.png",
         "url": "/portfolio/",
-        "desc": "My awesome portfolio of matser projects"
+        "desc": "My awesome portfolio of matser projects",
+        "date": "Nov. 2019"
       },
       {
         "id": "002",
         "title": "Bubble Shooter",
         "url": "/poplong/",
         "img": "https://wallygood.net/imgs/poplong.png",
-        "desc": "A bubbule shooter game built based on pixi.js"
+        "desc": "A bubbule shooter game built based on pixi.js",
+        "date": "Feb. 2019"
       },
       {
         "id": "003",
         "title": "Where Is John",
         "url": "/help-the-johns/",
         "img": "https://wallygood.net/imgs/help-johns.jpg",
-        "desc": "An energy saving game based on pixi.js"
+        "desc": "An energy saving game based on pixi.js",
+        "date": "May. 2020"
       }
     ],
     "projectList": [
@@ -66,6 +69,20 @@
         "url": "http://app.wallygood.net",
         "img": "https://wallygood.net/imgs/corona.png",
         "desc": "The corona statistic react app using JHU's api"
+      },
+      {
+        "id": "007",
+        "title": "Found it!",
+        "url": "/prototype/",
+        "img": "https://wallygood.net/prototype/imgs/bg.png",
+        "desc": "The course project created in DECO7250 HCI."
+      },
+      {
+        "id": "008",
+        "title": "Quna Vue",
+        "url": "/quna/",
+        "img": "https://wallygood.net/imgs/quna.jpg",
+        "desc": "A vue project following Quna's design from MOOC tutorial"
       }
     ]
   }

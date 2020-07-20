@@ -23,6 +23,7 @@ export default {
 @media only screen and (max-width: 414px) {
   .intro {
     width: 90%;
+    line-height: 1.4rem;
   }
 }
 
@@ -30,6 +31,7 @@ export default {
   .intro {
     font-size: 1rem;
     padding: 0.5rem 0 1rem;
+    line-height: 1.2rem;
   }
 }
 </style>

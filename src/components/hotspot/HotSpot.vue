@@ -141,7 +141,7 @@ export default {
         }
         .block-content {
           .block-title {
-            margin: 1rem 0 0.5rem;
+            margin: 0.6rem 0 0.5rem;
           }
         }
         &:hover {
