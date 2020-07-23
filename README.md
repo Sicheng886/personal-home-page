@@ -1,24 +1,9 @@
 # home-page
 
-## Project setup
-```
-npm install
-```
+This is the [home page](https://wallygood.net) of my website, using Vue for creating the whole thing.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Intro
 
-### Compiles and minifies for production
-```
-npm run build
-```
+The website mainly using for displaying my separate projects that I created in years.
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+The project is a single page application, using Vuex for content management.
