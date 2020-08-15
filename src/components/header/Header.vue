@@ -19,15 +19,15 @@ export default {
   data() {
     return {
       styleObj: {
-        backgroundColor: isMobile() ? "rgba(49,81,94,1)" : "rgba(49,81,94,0)"
-      }
+        backgroundColor: isMobile() ? "rgba(49,81,94,1)" : "rgba(49,81,94,0)",
+      },
     };
   },
   computed: {
     headerHight() {
       return this.$refs.header.clientHeight;
     },
-    ...mapState(["hotspotPos", "projectPos", "aboutPos"])
+    ...mapState(["hotspotPos", "projectPos", "aboutPos"]),
   },
   methods: {
     scrollHandler() {
@@ -37,15 +37,17 @@ export default {
         window.pageYOffset;
       if (top < 50) {
         this.styleObj = {
-          backgroundColor: "rgba(49,81,94,0)"
+          backgroundColor: "rgba(49,81,94,0)",
         };
-      } else if (top < 150) {
+      } else if (top < 122) {
         this.styleObj = {
-          backgroundColor: `rgba(49,81,94,${(top - 50) / 100})`
+          backgroundColor: `rgba(49,81,94,${(top - 50) / 100})`,
+          backdropFilter: "saturate(180%) blur(20px)",
         };
       } else {
         this.styleObj = {
-          backgroundColor: "rgba(49,81,94,1)"
+          backgroundColor: "rgba(49,81,94,0.72)",
+          backdropFilter: "saturate(180%) blur(20px)",
         };
       }
     },
@@ -53,15 +55,15 @@ export default {
       window.scrollTo({
         top: this[item] - this.headerHight,
         left: 0,
-        behavior: "smooth"
+        behavior: "smooth",
       });
-    }
+    },
   },
   mounted() {
     if (!isMobile()) {
       window.addEventListener("scroll", this.scrollHandler);
     }
-  }
+  },
 };
 </script>
 
